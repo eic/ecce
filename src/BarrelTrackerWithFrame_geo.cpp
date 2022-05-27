@@ -77,8 +77,9 @@ static Ref_t create_BarrelTrackerWithFrame(Detector& description, xml_h e, Sensi
     sdet.addExtension<Acts::ActsExtension>(detWorldExt);
   }
 
-  Tube   topVolumeShape(dimensions.rmin(), dimensions.rmax(), dimensions.length() * 0.5);
-  Volume assembly(det_name, topVolumeShape, air);
+  //Tube topVolumeShape(dimensions.rmin(), dimensions.rmax(), dimensions.length() * 0.5);
+  //Volume assembly(det_name,topVolumeShape,air);
+  Assembly assembly(det_name);
 
   sens.setType("tracker");
 
@@ -345,7 +346,7 @@ static Ref_t create_BarrelTrackerWithFrame(Detector& description, xml_h e, Sensi
 
 //@}
 // clang-format off
-DECLARE_DETELEMENT(ecce_BarrelTrackerWithFrame, create_BarrelTrackerWithFrame)
-DECLARE_DETELEMENT(ecce_TrackerBarrel,   create_BarrelTrackerWithFrame)
-DECLARE_DETELEMENT(ecce_VertexBarrel,    create_BarrelTrackerWithFrame)
-DECLARE_DETELEMENT(ecce_TOFBarrel,       create_BarrelTrackerWithFrame)
+DECLARE_DETELEMENT(BarrelTrackerWithFrame, create_BarrelTrackerWithFrame)
+DECLARE_DETELEMENT(eic_TrackerBarrel,   create_BarrelTrackerWithFrame)
+DECLARE_DETELEMENT(eic_VertexBarrel,    create_BarrelTrackerWithFrame)
+DECLARE_DETELEMENT(eic_TOFBarrel,       create_BarrelTrackerWithFrame)
